@@ -40,16 +40,15 @@ def sim_sucesivas():
         tic = time.perf_counter()
         apuestas(fichas_inicial, max_jugadas, probabilidades)  # Ejecucion de funcion
         toc = time.perf_counter()
-        print('Cantidad apuestas: ', cant_apuestas)
         print('Tiempo de ejecucion de funcion', i, f': {toc-tic:0.5f} segundos')
         total_apuestas += cant_apuestas
     print('Promedio de apuestas: ', (total_apuestas/cant_ejecuciones))
 
 
 
-fichas_inicial = int(input('Cuantas fichas tiene?: '))  # agregar validador de numero cargado
-max_jugadas = int(input('Cuantas veces quiere jugar?: '))  # agrgar validador de valor cargado
-prob_ganar = float(input('Probabilidad de ganar: '))  # agrgar validador de valor cargado
+fichas_inicial = int(input('Cuantas fichas tiene?: '))
+max_jugadas = int(input('Cuantas veces quiere jugar?: '))
+prob_ganar = float(input('Probabilidad de ganar (ingresar numero con punto y no con coma): '))
 probabilidades = [prob_ganar, (1-prob_ganar)] #definicion de probabilidades para Weight
 
 opcion = -1
