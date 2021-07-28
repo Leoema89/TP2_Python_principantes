@@ -16,6 +16,8 @@ def menu():
 
 
 def apuestas(fichas_inicial, max_jugadas, probabilidades):
+    # no es recomendable el uso de variables globales.
+    # se pueden pasar los valores por inputs/outputs de las funciones.
     global cant_apuestas, fichas_totales, cant_jugadas, jugada_ganada, jugada_perdida
     fichas_totales = fichas_inicial
     cant_jugadas = max_jugadas
@@ -31,6 +33,7 @@ def apuestas(fichas_inicial, max_jugadas, probabilidades):
             jugada_perdida += 1
         cant_apuestas += 1
         cant_jugadas -= 1
+    # Si las variables estan como globales definidas, por que un return?
     return cant_apuestas, fichas_totales, cant_jugadas, jugada_ganada, jugada_perdida
 
 def sim_sucesivas():
